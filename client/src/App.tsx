@@ -1,14 +1,9 @@
 import React from 'react'
+import Layout from './components/Layout'
 import './App.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>test</h1>
-      </header>
-    </div>
-  )
+const App: React.FC = () => {
+  return <Layout>test layout</Layout>
 }
 
 export default App

@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+.body {
+    flex-grow: 1;
+  }
+
+  /* Body styles */
+.body {
+    padding: 20px;
+  }
+  
+/* Footer styles */
+.footer {
+    background-color: #333;
+    color: #fff;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .footer p {
+    margin: 0;
+  }
+  
