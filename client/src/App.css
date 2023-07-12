@@ -4,12 +4,13 @@
     min-height: 100vh;
   }
 
+  /* Body styles */
 .body {
     flex-grow: 1;
   }
 
-  /* Body styles */
-.body {
+  /* Homepage content styles */
+.content {
     padding: 20px;
   }
   
