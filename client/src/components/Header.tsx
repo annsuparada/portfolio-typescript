@@ -1,12 +1,15 @@
-import { Box, Button, Typography } from '@mui/material'
+import { Box, Button } from '@mui/material'
 import React from 'react'
+import { darkBackground, primary, secondary } from '../theme'
+import LaptopMacIcon from '@mui/icons-material/LaptopMac'
 
 const styles = {
   header: {
     width: '100%',
-    height: 500,
-    backgroundColor: 'primary.dark',
-    display: 'flex',
+    height: '95vh',
+    backgroundColor: darkBackground,
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -14,7 +17,7 @@ const styles = {
     width: 800,
     height: 300,
     padding: 2,
-    backgroundColor: 'primary.dark',
+    backgroundColor: darkBackground,
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -26,6 +29,16 @@ const styles = {
     backgroundColor: 'white',
     display: 'flex',
     justifyContent: 'center',
+  },
+  h1: {
+    color: secondary,
+    fontSize: '6rem',
+    margin: '0',
+  },
+  h2: {
+    color: secondary,
+    fontSize: '1.8rem',
+    textAlign: 'center' as 'center',
   },
   innerBottomBox: {
     maxWidth: 1000,
@@ -40,34 +53,27 @@ const styles = {
 const Header: React.FC = () => {
   return (
     <div>
-      <Box sx={styles.header}>
+      <div style={styles.header}>
         <Box sx={styles.innerBox}>
-          <Typography variant="h2" fontWeight="bold" color="white">
-            Ann Keller
-          </Typography>
-          <Typography variant="h3" mt={1} color="white">
-            Full-Stack Web Developer
-          </Typography>
-        </Box>
-      </Box>
-      <Box sx={styles.bottomBox}>
-        <Box sx={styles.innerBottomBox}>
-          <Typography variant="h2" fontWeight="bold" mt={2}>
-            About
-          </Typography>
-          <Typography variant="body1" paragraph fontSize={20} mt={2} mb={3}>
-            I'm a Full-Stack Developer with 3+ years of hands-on experience,
-            dedicated to designing, developing, and implementing innovative
-            applications and solutions using a diverse range of technologies and
-            programming languages. My mission is to deliver exceptional,
-            functional, and responsive web applications that exceed client
-            expectations and drive their success.
-          </Typography>
-          <Button variant="contained" size="large">
-            View My Works
+          <h1 style={styles.h1}>Ann Keller</h1>
+          <h2 style={styles.h2}>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s
+          </h2>
+
+          <Button
+            variant="contained"
+            size="large"
+            style={{ color: darkBackground, fontWeight: 'bold' }}
+          >
+            View My Work
           </Button>
         </Box>
-      </Box>
+        <Box sx={styles.innerBox}>
+          <LaptopMacIcon style={{ fontSize: '600px', color: primary }} />
+        </Box>
+      </div>
     </div>
   )
 }

@@ -26,7 +26,7 @@ const Navigation: React.FC = (props) => {
   }
 
   return (
-    <Box sx={{ width: '100%' }}>
+    <Box sx={{ width: '100%', marginBottom: '5px' }}>
       <Tabs
         value={value}
         onChange={handleChange}
@@ -35,7 +35,7 @@ const Navigation: React.FC = (props) => {
       >
         <LinkTab label="About" href="/" />
         <LinkTab label="Portfolio" href="/" />
-        <LinkTab label="Blog" href="/" />
+        {/* <LinkTab label="Blog" href="/" /> */}
         <LinkTab label="Contact" href="/" />
       </Tabs>
     </Box>
