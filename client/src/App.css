@@ -7,16 +7,73 @@
   /* Body styles */
 .body {
     flex-grow: 1;
+    margin: 0;
   }
 
-  /* Homepage content styles */
-.content {
-    padding: 20px;
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif; 
+    color: #2C2B30;
+    font-weight: 700;
+    text-align: center;
   }
   
+  p, a, label {
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+    color: #2C2B30;
+  }
+  
+  a {
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+    color: #2C2B30;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  li {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #2C2B30;
+    font-size: 18px;
+  }
+  
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+  }
+
+  h5 {
+    font-size: 1.25rem;
+  }
+
+  h6 {
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  .primary-button {
+    color: #2C2B30;
+    font-weight: bold;
+  }
+
 /* Footer styles */
 .footer {
-    background-color: #333;
+    background-color: #2C2B30;
     color: #fff;
     height: 60px;
     display: flex;

@@ -39,7 +39,7 @@ export const theme = createTheme({
     fontFamily: ['Plus Jakarta Sans', 'serif'].join(','),
     h1: {
       fontFamily: 'Inter',
-      fontSize: '2.5rem',
+      fontSize: '3rem',
       fontWeight: 'bold',
     },
     h2: {

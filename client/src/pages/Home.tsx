@@ -1,16 +1,16 @@
 import React from 'react'
-import Blogs from '../components/Blogs'
-import Header from '../components/Header'
+import Blogs from '../components/section/Blogs'
+import Header from '../components/section/Header'
 import Projects from '../components/Projects'
+import About from '../components/section/About'
 
 const Home: React.FC = () => {
   return (
     <div>
       <Header />
-      <div className="content">
-        <Projects />
-        <Blogs />
-      </div>
+      <About />
+      <Projects />
+      <Blogs />
     </div>
   )
 }
