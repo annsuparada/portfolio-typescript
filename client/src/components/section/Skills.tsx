@@ -4,6 +4,7 @@ import HtmlIcon from '@mui/icons-material/Html'
 import CssIcon from '@mui/icons-material/Css'
 import JavascriptIcon from '@mui/icons-material/Javascript'
 import GitHubIcon from '@mui/icons-material/GitHub'
+import Grid from '../Grid'
 
 const Skills: React.FC = () => {
   const styles = {
@@ -31,7 +32,13 @@ const Skills: React.FC = () => {
   return (
     <div style={styles.container}>
       <h1 style={styles.h1}>Skills</h1>
-      <div style={styles.grid}>
+      <Grid
+        desktopColumns={6}
+        tabletColumns={5}
+        mobileColumns={4}
+        smallMobileColumns={3}
+        padding="10px"
+      >
         <HtmlIcon style={styles.icon} />
         <CssIcon style={styles.icon} />
         <JavascriptIcon style={styles.icon} />
@@ -44,7 +51,7 @@ const Skills: React.FC = () => {
         <GitHubIcon style={styles.icon} />
         <GitHubIcon style={styles.icon} />
         <GitHubIcon style={styles.icon} />
-      </div>
+      </Grid>
     </div>
   )
 }

@@ -1,12 +1,13 @@
 import { useMediaQuery } from '@mui/material'
 import React, { ReactNode } from 'react'
-import { desktopView, mobileView, tabletView } from '../theme'
+import { desktopView, mobileView, smallMobileView, tabletView } from '../theme'
 
 interface GridProps {
   children: ReactNode
   desktopColumns?: number
   tabletColumns?: number
   mobileColumns?: number
+  smallMobileColumns?: number
   gap?: string
   maxWidth?: string
   padding?: string
@@ -18,6 +19,7 @@ const Grid: React.FC<GridProps> = ({
   desktopColumns,
   tabletColumns,
   mobileColumns,
+  smallMobileColumns,
   gap,
   maxWidth,
   padding,
@@ -25,22 +27,31 @@ const Grid: React.FC<GridProps> = ({
 }) => {
   const isTablet = useMediaQuery(`(max-width:${tabletView})`)
   const isMobile = useMediaQuery(`(max-width:${mobileView})`)
+  const isSmallMobile = useMediaQuery(`(max-width:${smallMobileView})`)
 
-  const columns = isMobile
-    ? mobileColumns
-    : isTablet
-    ? tabletColumns
-    : desktopColumns
+  const getResponsiveColumns = () => {
+    if (isMobile) {
+      return mobileColumns
+    } else if (isSmallMobile) {
+      return smallMobileColumns
+    } else if (isTablet) {
+      return tabletColumns
+    } else {
+      return desktopColumns
+    }
+  }
 
+  console.log('isSmallMobile', isSmallMobile, smallMobileColumns)
   const styles = {
     gridContainer: {
       display: 'grid',
-      gridTemplateColumns: `repeat(${columns}, 1fr)`,
+      gridTemplateColumns: `repeat(${getResponsiveColumns()}, 1fr)`,
       gap: gap,
       maxWidth: maxWidth,
       margin: '0 auto',
       padding: padding,
       height: '100%',
+      justifyItems: 'center',
       ...customStyles,
     },
   }
@@ -51,6 +62,7 @@ Grid.defaultProps = {
   desktopColumns: 2,
   tabletColumns: 2,
   mobileColumns: 1,
+  smallMobileColumns: 1,
   gap: '10px',
   maxWidth: desktopView,
   padding: '0px',

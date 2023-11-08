@@ -14,7 +14,8 @@ export const logoColor = '#2C2B30'
 export const pink = '#F2C4CE'
 
 export const mobileView = '600px'
-export const tabletView = '850px'
+export const smallMobileView = '400px'
+export const tabletView = '900px'
 export const desktopView = '1440px'
 
 export const theme = createTheme({
