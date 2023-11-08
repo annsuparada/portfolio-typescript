@@ -1,10 +1,13 @@
 import React from 'react'
-import Card from '@mui/material/Card'
-import CardActions from '@mui/material/CardActions'
-import CardContent from '@mui/material/CardContent'
-import CardMedia from '@mui/material/CardMedia'
 import Button from '@mui/material/Button'
-import Typography from '@mui/material/Typography'
+import {
+  Box,
+  IconButton,
+  ImageListItem,
+  ImageListItemBar,
+  Modal,
+} from '@mui/material'
+import InfoIcon from '@mui/icons-material/Info'
 
 interface ProjectCardProps {
   imageUrl: string
@@ -16,35 +19,72 @@ interface ProjectCardProps {
   gitHubLink?: string
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = (props) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({
+  imageUrl,
+  alt,
+  projectName,
+  projectDescription,
+  tachStacks,
+  projectLink,
+  gitHubLink,
+}) => {
+  const [open, setOpen] = React.useState(false)
+  const handleOpen = () => {
+    setOpen(true)
+  }
+  const handleClose = () => {
+    setOpen(false)
+  }
+
+  const styles = {
+    modal: {
+      position: 'absolute' as 'absolute',
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+      width: 400,
+      bgcolor: 'background.paper',
+      border: '2px solid #000',
+      boxShadow: 24,
+      pt: 2,
+      px: 4,
+      pb: 3,
+    },
+  }
   return (
-    <Card sx={{ maxWidth: 345, padding: 1, margin: 1 }}>
-      <CardMedia
-        component="img"
-        alt={props.alt}
-        // height="180"
-        image={props.imageUrl}
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {props.projectName}
-        </Typography>
-        <Typography variant="body2" color="text.secondary" mt={2}>
-          {props.projectDescription}
-        </Typography>
-        <Typography variant="body2" color="text.secondary" mt={2}>
-          {props.tachStacks}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small" href={props.projectLink}>
-          Project
-        </Button>
-        <Button size="small" href={props.gitHubLink}>
-          GitHub
-        </Button>
-      </CardActions>
-    </Card>
+    <div>
+      <ImageListItem>
+        <img srcSet={imageUrl} src={imageUrl} alt={alt} loading="lazy" />
+        <ImageListItemBar
+          title={projectName}
+          sx={{ backgroundColor: 'rgba(0, 0, 0, 0.8)' }}
+          actionIcon={
+            <IconButton
+              sx={{ color: 'rgba(255, 255, 255, 1)' }}
+              aria-label={`info about ${projectName}`}
+              onClick={handleOpen}
+            >
+              <InfoIcon />
+            </IconButton>
+          }
+        />
+      </ImageListItem>
+
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="child-modal-title"
+        aria-describedby="child-modal-description"
+      >
+        <Box sx={styles.modal}>
+          <h2 id="child-modal-title">Text in a child modal</h2>
+          <p id="child-modal-description">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          </p>
+          <Button onClick={handleClose}>Close Child Modal</Button>
+        </Box>
+      </Modal>
+    </div>
   )
 }
 

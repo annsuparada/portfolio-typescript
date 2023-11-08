@@ -97,4 +97,15 @@ export const theme = createTheme({
       fontSize: '1rem',
     },
   },
+  components: {
+    MuiImageListItemBar: {
+      styleOverrides: {
+        title: {
+          fontFamily: ['Plus Jakarta Sans', 'sans-serif'].join(','),
+          fontSize: '1rem',
+          fontWeight: 'bold',
+        },
+      },
+    },
+  },
 })

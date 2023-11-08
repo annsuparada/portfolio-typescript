@@ -41,7 +41,6 @@ const Grid: React.FC<GridProps> = ({
     }
   }
 
-  console.log('isSmallMobile', isSmallMobile, smallMobileColumns)
   const styles = {
     gridContainer: {
       display: 'grid',
