@@ -1,6 +1,7 @@
 import { Box, Typography } from '@mui/material'
 import React from 'react'
 import { desktopView } from '../../theme'
+import Grid from '../Grid'
 import PrimaryButton from '../PrimaryButton'
 
 const About: React.FC = () => {
@@ -25,7 +26,7 @@ const About: React.FC = () => {
   return (
     <div>
       <h1>About</h1>
-      <div style={styles.container}>
+      <Grid padding="20px 10px 30px">
         <div style={styles.imgContainer}>
           <img
             src="https://res.cloudinary.com/dejr86qx8/image/upload/v1597962282/war%20stories/ann_itko5i.png"
@@ -33,7 +34,7 @@ const About: React.FC = () => {
             style={styles.img}
           />
         </div>
-        <Box>
+        <Box sx={{ marginTop: '15px' }}>
           <Typography variant="body1" paragraph fontSize={20} mt={2} mb={3}>
             I'm a Full-Stack Developer with 3+ years of hands-on experience,
             dedicated to designing, developing, and implementing innovative
@@ -44,7 +45,7 @@ const About: React.FC = () => {
           </Typography>
           <PrimaryButton text="view my work" />
         </Box>
-      </div>
+      </Grid>
     </div>
   )
 }

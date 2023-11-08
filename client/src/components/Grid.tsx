@@ -9,6 +9,7 @@ interface GridProps {
   mobileColumns?: number
   gap?: string
   maxWidth?: string
+  padding?: string
   customStyles?: object
 }
 
@@ -19,6 +20,7 @@ const Grid: React.FC<GridProps> = ({
   mobileColumns,
   gap,
   maxWidth,
+  padding,
   customStyles,
 }) => {
   const isTablet = useMediaQuery(`(max-width:${tabletView})`)
@@ -37,6 +39,7 @@ const Grid: React.FC<GridProps> = ({
       gap: gap,
       maxWidth: maxWidth,
       margin: '0 auto',
+      padding: padding,
       height: '100%',
       ...customStyles,
     },
@@ -50,5 +53,6 @@ Grid.defaultProps = {
   mobileColumns: 1,
   gap: '10px',
   maxWidth: desktopView,
+  padding: '0px',
 }
 export default Grid
