@@ -3,16 +3,13 @@ import React from 'react'
 import { darkBackground, primary, secondary } from '../../theme'
 import LaptopMacIcon from '@mui/icons-material/LaptopMac'
 import PrimaryButton from '../PrimaryButton'
+import Grid from '../Grid'
 
 const styles = {
   header: {
     width: '100%',
     height: '95vh',
     backgroundColor: darkBackground,
-    display: 'grid',
-    gridTemplateColumns: '1fr 1fr',
-    justifyContent: 'center',
-    alignItems: 'center',
   },
   innerBox: {
     padding: 2,
@@ -38,19 +35,21 @@ const Header: React.FC = () => {
   return (
     <div>
       <div style={styles.header}>
-        <Box sx={styles.innerBox}>
-          <h1 style={styles.h1}>Ann Keller</h1>
-          <h2 style={styles.h2}>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s
-          </h2>
+        <Grid>
+          <Box sx={styles.innerBox}>
+            <h1 style={styles.h1}>Ann Keller</h1>
+            <h2 style={styles.h2}>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s
+            </h2>
 
-          <PrimaryButton text="view my work" />
-        </Box>
-        <Box sx={styles.innerBox}>
-          <LaptopMacIcon style={{ fontSize: '600px', color: primary }} />
-        </Box>
+            <PrimaryButton text="view my work" />
+          </Box>
+          <Box sx={styles.innerBox}>
+            <LaptopMacIcon style={{ fontSize: '300px', color: primary }} />
+          </Box>
+        </Grid>
       </div>
     </div>
   )

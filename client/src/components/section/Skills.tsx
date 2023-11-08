@@ -1,5 +1,5 @@
 import React from 'react'
-import { desktopView, lightBackground, pink, secondary } from '../../theme'
+import { desktopView, lightBackground, secondary } from '../../theme'
 import HtmlIcon from '@mui/icons-material/Html'
 import CssIcon from '@mui/icons-material/Css'
 import JavascriptIcon from '@mui/icons-material/Javascript'

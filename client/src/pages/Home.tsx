@@ -1,5 +1,4 @@
 import React from 'react'
-import Blogs from '../components/section/Blogs'
 import Header from '../components/section/Header'
 import Projects from '../components/Projects'
 import About from '../components/section/About'
@@ -11,8 +10,7 @@ const Home: React.FC = () => {
       <Header />
       <About />
       <Skills />
-      {/* <Projects /> */}
-      {/* <Blogs /> */}
+      <Projects />
     </div>
   )
 }
