@@ -35,8 +35,7 @@ const Skills: React.FC = () => {
       <Grid
         desktopColumns={6}
         tabletColumns={5}
-        mobileColumns={4}
-        smallMobileColumns={3}
+        mobileColumns={3}
         padding="10px"
       >
         <HtmlIcon style={styles.icon} />

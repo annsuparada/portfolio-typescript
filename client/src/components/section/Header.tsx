@@ -8,7 +8,6 @@ import Grid from '../Grid'
 const styles = {
   header: {
     width: '100%',
-    height: '95vh',
     backgroundColor: darkBackground,
   },
   innerBox: {
@@ -35,7 +34,7 @@ const Header: React.FC = () => {
   return (
     <div>
       <div style={styles.header}>
-        <Grid customStyles={{ height: '100%' }}>
+        <Grid customStyles={{ minHeight: '95vh' }}>
           <Box sx={styles.innerBox}>
             <h1 style={styles.h1}>Ann Keller</h1>
             <h2 style={styles.h2}>
