@@ -3,6 +3,7 @@ import Header from '../components/section/Header'
 import Projects from '../components/section/Projects'
 import About from '../components/section/About'
 import Skills from '../components/section/Skills'
+import Contact from '../components/section/Contact'
 
 const Home: React.FC = () => {
   return (
@@ -11,6 +12,7 @@ const Home: React.FC = () => {
       <About />
       <Skills />
       <Projects />
+      <Contact />
     </div>
   )
 }

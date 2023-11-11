@@ -35,7 +35,7 @@ const Header: React.FC = () => {
   return (
     <div>
       <div style={styles.header}>
-        <Grid>
+        <Grid customStyles={{ height: '100%' }}>
           <Box sx={styles.innerBox}>
             <h1 style={styles.h1}>Ann Keller</h1>
             <h2 style={styles.h2}>

@@ -9,6 +9,7 @@ interface GridProps {
   mobileColumns?: number
   smallMobileColumns?: number
   gap?: string
+  justifyItems?: string
   maxWidth?: string
   padding?: string
   customStyles?: object
@@ -21,6 +22,7 @@ const Grid: React.FC<GridProps> = ({
   mobileColumns,
   smallMobileColumns,
   gap,
+  justifyItems,
   maxWidth,
   padding,
   customStyles,
@@ -49,8 +51,7 @@ const Grid: React.FC<GridProps> = ({
       maxWidth: maxWidth,
       margin: '0 auto',
       padding: padding,
-      height: '100%',
-      justifyItems: 'center',
+      justifyItems: justifyItems,
       ...customStyles,
     },
   }
@@ -63,6 +64,7 @@ Grid.defaultProps = {
   mobileColumns: 1,
   smallMobileColumns: 1,
   gap: '10px',
+  justifyItems: 'center',
   maxWidth: desktopView,
   padding: '0px',
 }
