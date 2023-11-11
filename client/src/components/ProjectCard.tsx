@@ -1,13 +1,13 @@
 import React from 'react'
-import Button from '@mui/material/Button'
-import {
-  Box,
-  IconButton,
-  ImageListItem,
-  ImageListItemBar,
-  Modal,
-} from '@mui/material'
-import InfoIcon from '@mui/icons-material/Info'
+import { styled } from '@mui/material'
+import Card from '@mui/material/Card'
+import CardMedia from '@mui/material/CardMedia'
+import CardContent from '@mui/material/CardContent'
+import CardActions from '@mui/material/CardActions'
+import Collapse from '@mui/material/Collapse'
+import IconButton, { IconButtonProps } from '@mui/material/IconButton'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+import LanguageIcon from '@mui/icons-material/Language'
 
 interface ProjectCardProps {
   imageUrl: string
@@ -19,6 +19,21 @@ interface ProjectCardProps {
   gitHubLink?: string
 }
 
+interface ExpandMoreProps extends IconButtonProps {
+  expand: boolean
+}
+
+const ExpandMore = styled((props: ExpandMoreProps) => {
+  const { expand, ...other } = props
+  return <IconButton {...other} />
+})(({ theme, expand }) => ({
+  transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
+  marginLeft: 'auto',
+  transition: theme.transitions.create('transform', {
+    duration: theme.transitions.duration.shortest,
+  }),
+}))
+
 const ProjectCard: React.FC<ProjectCardProps> = ({
   imageUrl,
   alt,
@@ -28,62 +43,38 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   projectLink,
   gitHubLink,
 }) => {
-  const [open, setOpen] = React.useState(false)
-  const handleOpen = () => {
-    setOpen(true)
-  }
-  const handleClose = () => {
-    setOpen(false)
-  }
+  const [expanded, setExpanded] = React.useState(false)
 
-  const styles = {
-    modal: {
-      position: 'absolute' as 'absolute',
-      top: '50%',
-      left: '50%',
-      transform: 'translate(-50%, -50%)',
-      width: 400,
-      bgcolor: 'background.paper',
-      border: '2px solid #000',
-      boxShadow: 24,
-      pt: 2,
-      px: 4,
-      pb: 3,
-    },
+  const handleExpandClick = () => {
+    setExpanded(!expanded)
   }
   return (
     <div>
-      <ImageListItem>
-        <img srcSet={imageUrl} src={imageUrl} alt={alt} loading="lazy" />
-        <ImageListItemBar
-          title={projectName}
-          sx={{ backgroundColor: 'rgba(0, 0, 0, 0.8)' }}
-          actionIcon={
-            <IconButton
-              sx={{ color: 'rgba(255, 255, 255, 1)' }}
-              aria-label={`info about ${projectName}`}
-              onClick={handleOpen}
-            >
-              <InfoIcon />
-            </IconButton>
-          }
-        />
-      </ImageListItem>
-
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="child-modal-title"
-        aria-describedby="child-modal-description"
-      >
-        <Box sx={styles.modal}>
-          <h2 id="child-modal-title">Text in a child modal</h2>
-          <p id="child-modal-description">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-          </p>
-          <Button onClick={handleClose}>Close Child Modal</Button>
-        </Box>
-      </Modal>
+      <Card>
+        <CardMedia component="img" image={imageUrl} alt={alt} />
+        <CardContent>
+          <h5 style={{ textAlign: 'left', margin: '5px' }}>{projectName}</h5>
+          <p>{projectDescription}</p>
+        </CardContent>
+        <CardActions disableSpacing>
+          <IconButton aria-label="link" href={projectLink} target="_blank">
+            <LanguageIcon />
+          </IconButton>
+          <ExpandMore
+            expand={expanded}
+            onClick={handleExpandClick}
+            aria-expanded={expanded}
+            aria-label="show more"
+          >
+            <ExpandMoreIcon />
+          </ExpandMore>
+        </CardActions>
+        <Collapse in={expanded} timeout="auto" unmountOnExit>
+          <CardContent>
+            <p>{tachStacks}</p>
+          </CardContent>
+        </Collapse>
+      </Card>
     </div>
   )
 }
