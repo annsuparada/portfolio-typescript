@@ -17,13 +17,13 @@ const Contact: React.FC = () => {
     },
     leftContainer: {
       backgroundColor: primary,
-      padding: '20px',
+      padding: '40px 10px',
     },
     infoContainer: {
       display: 'grid',
       alignContent: 'center',
       gridTemplateColumns: '1fr 4fr',
-      padding: '20px',
+      padding: '40px 10px',
     },
     icon: {
       fontSize: '3rem',
@@ -40,7 +40,7 @@ const Contact: React.FC = () => {
       <Grid maxWidth="1000px" customStyles={styles.grid}>
         <div style={styles.leftContainer}>
           <h2>Let's Conect</h2>
-          <p>
+          <p style={{ textAlign: 'center' }}>
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry.
           </p>
