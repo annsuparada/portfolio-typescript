@@ -69,3 +69,16 @@ h6 {
 p {
   font-size: 18px;
 }
+
+
+.scroll-to-link {
+  color: #D6D6D6;
+  margin: 2px;
+}
+
+.scroll-to-link:hover {
+  cursor: pointer;
+  transition: 0.5s;
+  text-shadow: 2px 2px 5px #F58F7C;
+  transition: 0.5s;
+}
