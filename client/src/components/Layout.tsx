@@ -11,7 +11,13 @@ interface LayoutProps extends Children, ScrollToOnClick {}
 const Layout: React.FC<LayoutProps> = (props: LayoutProps) => {
   return (
     <div className="container">
-      <Navigation />
+      <Navigation
+        scrollToHome={props.scrollToHome}
+        scrollToAbout={props.scrollToAbout}
+        scrollToSkills={props.scrollToSkills}
+        scrollToPortfolio={props.scrollToPortfolio}
+        scrollToContact={props.scrollToContact}
+      />
       <div className="body">{props.children}</div>
       <Footer
         scrollToHome={props.scrollToHome}
