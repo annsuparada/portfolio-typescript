@@ -1,30 +1,28 @@
 import React from 'react'
+import Link from '@mui/material/Link'
 import { darkBackground, secondary } from '../theme'
 import Grid from './Grid'
 import ScrollToLink from './ScrollToLink'
+import LinkedInIcon from '@mui/icons-material/LinkedIn'
+import GitHubIcon from '@mui/icons-material/GitHub'
+import EmailIcon from '@mui/icons-material/Email'
+import { ScrollToOnClick } from '../types'
 
-interface FooterProps {
-  scrollToHome: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void
-  scrollToAbout: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void
-  scrollToSkills: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void
-  scrollToPortfolio: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void
-  scrollToContact: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void
-}
-
-const Footer: React.FC<FooterProps> = (props: FooterProps) => {
+const Footer: React.FC<ScrollToOnClick> = (props: ScrollToOnClick) => {
   const styles = {
     container: {
       backgroundColor: darkBackground,
-      minHeight: '20vh',
     },
     infoContainer: {
       display: 'grid',
       alignContent: 'center',
-      gridTemplateColumns: '1fr 4fr',
-      padding: '40px 10px',
+      gridTemplateColumns: '1fr 1fr 1fr',
+      maxWidth: '120px',
+      padding: '15px',
+      margin: '0 auto',
     },
     icon: {
-      fontSize: '3rem',
+      fontSize: '1.7rem',
       color: secondary,
     },
     p: {
@@ -38,21 +36,43 @@ const Footer: React.FC<FooterProps> = (props: FooterProps) => {
           <h2 style={{ color: secondary }}>LOGO</h2>
         </div>
         <div>
-          <ScrollToLink scrollToOnClick={props.scrollToHome}>Home</ScrollToLink>
-          <ScrollToLink scrollToOnClick={props.scrollToAbout}>
-            About
-          </ScrollToLink>
-          <ScrollToLink scrollToOnClick={props.scrollToSkills}>
-            Skills
-          </ScrollToLink>
-          <ScrollToLink scrollToOnClick={props.scrollToPortfolio}>
-            Portfolio
-          </ScrollToLink>
-          <ScrollToLink scrollToOnClick={props.scrollToContact}>
-            Contact
-          </ScrollToLink>
+          <div style={styles.infoContainer}>
+            <Link
+              href="https://www.linkedin.com/in/ann-suparada/"
+              target="_blank"
+            >
+              <LinkedInIcon style={styles.icon} />
+            </Link>
+            <Link href="https://github.com/annsuparada" target="_blank">
+              <GitHubIcon style={styles.icon} />
+            </Link>
+            <Link href="mailto:ann.suparada@gmail.com.com">
+              <EmailIcon style={styles.icon} />
+            </Link>
+          </div>
+
+          <Grid desktopColumns={5} tabletColumns={5} mobileColumns={1}>
+            <ScrollToLink scrollToOnClick={props.scrollToHome}>
+              Home
+            </ScrollToLink>
+            <ScrollToLink scrollToOnClick={props.scrollToAbout}>
+              About
+            </ScrollToLink>
+            <ScrollToLink scrollToOnClick={props.scrollToSkills}>
+              Skills
+            </ScrollToLink>
+            <ScrollToLink scrollToOnClick={props.scrollToPortfolio}>
+              Portfolio
+            </ScrollToLink>
+            <ScrollToLink scrollToOnClick={props.scrollToContact}>
+              Contact
+            </ScrollToLink>
+          </Grid>
         </div>
-        <div></div>
+        <p style={{ color: secondary, textAlign: 'center' }}>
+          Lorem Ipsum is simply dummy text <br />
+          of the printing and typesetting industry.
+        </p>
       </Grid>
     </div>
   )

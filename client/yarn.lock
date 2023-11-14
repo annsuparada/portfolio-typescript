@@ -1856,10 +1856,10 @@
   "resolved" "https://registry.npmjs.org/@popperjs/core/-/core-2.11.8.tgz"
   "version" "2.11.8"
 
-"@remix-run/router@1.7.1":
-  "integrity" "sha512-bgVQM4ZJ2u2CM8k1ey70o1ePFXsEzYVZoWghh6WjM8p59jQ7HxzbHW4SbnWFG7V9ig9chLawQxDTZ3xzOF8MkQ=="
-  "resolved" "https://registry.npmjs.org/@remix-run/router/-/router-1.7.1.tgz"
-  "version" "1.7.1"
+"@remix-run/router@1.11.0":
+  "integrity" "sha512-BHdhcWgeiudl91HvVa2wxqZjSHbheSgIiDvxrF1VjFzBzpTtuDPkOdOi3Iqvc08kXtFkLjhbS+ML9aM8mJS+wQ=="
+  "resolved" "https://registry.npmjs.org/@remix-run/router/-/router-1.11.0.tgz"
+  "version" "1.11.0"
 
 "@rollup/plugin-babel@^5.2.0":
   "integrity" "sha512-WFfdLWU/xVWKeRQnKmIAQULUI7Il0gZnBIH/ZFO069wYIfPu+8zrfp/KMW0atmELoRDq8FbiP3VCss9MhCut7Q=="
@@ -7914,19 +7914,19 @@
   "version" "0.11.0"
 
 "react-router-dom@^6.14.1":
-  "integrity" "sha512-ssF6M5UkQjHK70fgukCJyjlda0Dgono2QGwqGvuk7D+EDGHdacEN3Yke2LTMjkrpHuFwBfDFsEjGVXBDmL+bWw=="
-  "resolved" "https://registry.npmjs.org/react-router-dom/-/react-router-dom-6.14.1.tgz"
-  "version" "6.14.1"
+  "integrity" "sha512-Ubrue4+Ercc/BoDkFQfc6og5zRQ4A8YxSO3Knsne+eRbZ+IepAsK249XBH/XaFuOYOYr3L3r13CXTLvYt5JDjw=="
+  "resolved" "https://registry.npmjs.org/react-router-dom/-/react-router-dom-6.18.0.tgz"
+  "version" "6.18.0"
   dependencies:
-    "@remix-run/router" "1.7.1"
-    "react-router" "6.14.1"
+    "@remix-run/router" "1.11.0"
+    "react-router" "6.18.0"
 
-"react-router@6.14.1":
-  "integrity" "sha512-U4PfgvG55LdvbQjg5Y9QRWyVxIdO1LlpYT7x+tMAxd9/vmiPuJhIwdxZuIQLN/9e3O4KFDHYfR9gzGeYMasW8g=="
-  "resolved" "https://registry.npmjs.org/react-router/-/react-router-6.14.1.tgz"
-  "version" "6.14.1"
+"react-router@6.18.0":
+  "integrity" "sha512-vk2y7Dsy8wI02eRRaRmOs9g2o+aE72YCx5q9VasT1N9v+lrdB79tIqrjMfByHiY5+6aYkH2rUa5X839nwWGPDg=="
+  "resolved" "https://registry.npmjs.org/react-router/-/react-router-6.18.0.tgz"
+  "version" "6.18.0"
   dependencies:
-    "@remix-run/router" "1.7.1"
+    "@remix-run/router" "1.11.0"
 
 "react-scripts@5.0.1":
   "integrity" "sha512-8VAmEm/ZAwQzJ+GOMLbBsTdDKOpuZh7RPs0UymvBR2vRk4iZWCskjbFnxqjrzoIvlNNRZ3QJFx6/qDSi6zSnaQ=="

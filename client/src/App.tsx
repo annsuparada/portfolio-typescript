@@ -5,7 +5,6 @@ import Layout from './components/Layout'
 import Home from './pages/Home'
 import BlogPage from './pages/BlogPage'
 import { theme } from './theme'
-import Footer from './components/Footer'
 
 const App: React.FC = () => {
   const scrollToOnClick = (targetId: string) => {
@@ -22,7 +21,13 @@ const App: React.FC = () => {
   const contactTargetId = 'contact'
   return (
     <ThemeProvider theme={theme}>
-      <Layout>
+      <Layout
+        scrollToHome={() => scrollToOnClick(homeTargetId)}
+        scrollToAbout={() => scrollToOnClick(aboutTargetId)}
+        scrollToSkills={() => scrollToOnClick(skillTargetId)}
+        scrollToPortfolio={() => scrollToOnClick(portfolioTargetId)}
+        scrollToContact={() => scrollToOnClick(contactTargetId)}
+      >
         <Router>
           <Routes>
             <Route
@@ -41,13 +46,6 @@ const App: React.FC = () => {
           </Routes>
         </Router>
       </Layout>
-      <Footer
-        scrollToHome={() => scrollToOnClick(homeTargetId)}
-        scrollToAbout={() => scrollToOnClick(aboutTargetId)}
-        scrollToSkills={() => scrollToOnClick(skillTargetId)}
-        scrollToPortfolio={() => scrollToOnClick(portfolioTargetId)}
-        scrollToContact={() => scrollToOnClick(contactTargetId)}
-      />
     </ThemeProvider>
   )
 }
