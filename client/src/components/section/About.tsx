@@ -6,9 +6,10 @@ import PrimaryButton from '../PrimaryButton'
 
 interface AboutProps {
   targetId: string
+  scrollToPortfolio: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void
 }
 
-const About: React.FC<AboutProps> = ({ targetId }) => {
+const About: React.FC<AboutProps> = ({ targetId, scrollToPortfolio }) => {
   const styles = {
     container: {
       maxWidth: desktopView,
@@ -47,7 +48,7 @@ const About: React.FC<AboutProps> = ({ targetId }) => {
             functional, and responsive web applications that exceed client
             expectations and drive their success.
           </Typography>
-          <PrimaryButton text="view my work" />
+          <PrimaryButton text="view my work" onClick={scrollToPortfolio} />
         </Box>
       </Grid>
     </div>

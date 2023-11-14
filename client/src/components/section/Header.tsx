@@ -7,6 +7,7 @@ import Grid from '../Grid'
 
 interface HeaderProps {
   targetId: string
+  scrollToPortfolio: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void
 }
 
 const styles = {
@@ -34,7 +35,7 @@ const styles = {
   },
 }
 
-const Header: React.FC<HeaderProps> = ({ targetId }) => {
+const Header: React.FC<HeaderProps> = ({ targetId, scrollToPortfolio }) => {
   return (
     <div>
       <div style={styles.header} id={targetId}>
@@ -47,7 +48,7 @@ const Header: React.FC<HeaderProps> = ({ targetId }) => {
               ever since the 1500s
             </h2>
 
-            <PrimaryButton text="view my work" />
+            <PrimaryButton text="view my work" onClick={scrollToPortfolio} />
           </Box>
           <Box sx={styles.innerBox}>
             <LaptopMacIcon style={{ fontSize: '300px', color: primary }} />

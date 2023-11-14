@@ -39,6 +39,7 @@ const App: React.FC = () => {
                   skillTargetId={skillTargetId}
                   portfolioTargetId={portfolioTargetId}
                   contactTargetId={contactTargetId}
+                  scrollToPortfolio={() => scrollToOnClick(portfolioTargetId)}
                 />
               }
             />

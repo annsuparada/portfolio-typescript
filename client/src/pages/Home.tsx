@@ -11,12 +11,19 @@ interface HomeProps {
   skillTargetId: string
   portfolioTargetId: string
   contactTargetId: string
+  scrollToPortfolio: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void
 }
 const Home: React.FC<HomeProps> = (props: HomeProps) => {
   return (
     <div>
-      <Header targetId={props.homeTargetId} />
-      <About targetId={props.aboutTargetId} />
+      <Header
+        targetId={props.homeTargetId}
+        scrollToPortfolio={props.scrollToPortfolio}
+      />
+      <About
+        targetId={props.aboutTargetId}
+        scrollToPortfolio={props.scrollToPortfolio}
+      />
       <Skills targetId={props.skillTargetId} />
       <Portfolio targetId={props.portfolioTargetId} />
       <Contact targetId={props.contactTargetId} />
