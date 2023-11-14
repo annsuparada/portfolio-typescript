@@ -6,7 +6,11 @@ import EmailIcon from '@mui/icons-material/Email'
 import { darkFont, primary } from '../../theme'
 import { Link } from 'react-router-dom'
 
-const Contact: React.FC = () => {
+interface ContactProps {
+  targetId: string
+}
+
+const Contact: React.FC<ContactProps> = ({ targetId }) => {
   const styles = {
     container: {
       margin: '0 10px 100px',
@@ -35,7 +39,7 @@ const Contact: React.FC = () => {
     },
   }
   return (
-    <div style={styles.container}>
+    <div style={styles.container} id={targetId}>
       <h1>Contact</h1>
       <Grid maxWidth="1000px" customStyles={styles.grid}>
         <div style={styles.leftContainer}>

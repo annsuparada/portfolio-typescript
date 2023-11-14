@@ -1,18 +1,25 @@
 import React from 'react'
 import Header from '../components/section/Header'
-import Projects from '../components/section/Projects'
+import Portfolio from '../components/section/Portfolio'
 import About from '../components/section/About'
 import Skills from '../components/section/Skills'
 import Contact from '../components/section/Contact'
 
-const Home: React.FC = () => {
+interface HomeProps {
+  homeTargetId: string
+  aboutTargetId: string
+  skillTargetId: string
+  portfolioTargetId: string
+  contactTargetId: string
+}
+const Home: React.FC<HomeProps> = (props: HomeProps) => {
   return (
     <div>
-      <Header />
-      <About />
-      <Skills />
-      <Projects />
-      <Contact />
+      <Header targetId={props.homeTargetId} />
+      <About targetId={props.aboutTargetId} />
+      <Skills targetId={props.skillTargetId} />
+      <Portfolio targetId={props.portfolioTargetId} />
+      <Contact targetId={props.contactTargetId} />
     </div>
   )
 }

@@ -3,15 +3,18 @@ import ProjectCard from '../ProjectCard'
 import { projects } from '../../data/projectData'
 import Grid from '../Grid'
 
-const Projects: React.FC = () => {
+interface PortfolioProps {
+  targetId: string
+}
+
+const Portfolio: React.FC<PortfolioProps> = ({ targetId }) => {
   const styles = {
     constainer: {
-      // maxWidth: desktopView,
       padding: '20px 10px 30px',
     },
   }
   return (
-    <div style={styles.constainer}>
+    <div style={styles.constainer} id={targetId}>
       <h1>Portfolio</h1>
       <Grid desktopColumns={3} padding="10px">
         {projects.map((i, index) => (
@@ -31,4 +34,4 @@ const Projects: React.FC = () => {
   )
 }
 
-export default Projects
+export default Portfolio

@@ -5,6 +5,10 @@ import LaptopMacIcon from '@mui/icons-material/LaptopMac'
 import PrimaryButton from '../PrimaryButton'
 import Grid from '../Grid'
 
+interface HeaderProps {
+  targetId: string
+}
+
 const styles = {
   header: {
     width: '100%',
@@ -30,10 +34,10 @@ const styles = {
   },
 }
 
-const Header: React.FC = () => {
+const Header: React.FC<HeaderProps> = ({ targetId }) => {
   return (
     <div>
-      <div style={styles.header}>
+      <div style={styles.header} id={targetId}>
         <Grid customStyles={{ minHeight: '95vh' }}>
           <Box sx={styles.innerBox}>
             <h1 style={styles.h1}>Ann Keller</h1>

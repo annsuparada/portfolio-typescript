@@ -4,7 +4,11 @@ import { desktopView } from '../../theme'
 import Grid from '../Grid'
 import PrimaryButton from '../PrimaryButton'
 
-const About: React.FC = () => {
+interface AboutProps {
+  targetId: string
+}
+
+const About: React.FC<AboutProps> = ({ targetId }) => {
   const styles = {
     container: {
       maxWidth: desktopView,
@@ -24,7 +28,7 @@ const About: React.FC = () => {
     },
   }
   return (
-    <div>
+    <div id={targetId}>
       <h1>About</h1>
       <Grid padding="20px 10px 30px">
         <div style={styles.imgContainer}>

@@ -6,7 +6,11 @@ import JavascriptIcon from '@mui/icons-material/Javascript'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import Grid from '../Grid'
 
-const Skills: React.FC = () => {
+interface SkillsProps {
+  targetId: string
+}
+
+const Skills: React.FC<SkillsProps> = ({ targetId }) => {
   const styles = {
     container: {
       backgroundColor: lightBackground,
@@ -30,7 +34,7 @@ const Skills: React.FC = () => {
     },
   }
   return (
-    <div style={styles.container}>
+    <div style={styles.container} id={targetId}>
       <h1 style={styles.h1}>Skills</h1>
       <Grid
         desktopColumns={6}
