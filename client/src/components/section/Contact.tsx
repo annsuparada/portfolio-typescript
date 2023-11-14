@@ -51,15 +51,18 @@ const Contact: React.FC<ContactProps> = ({ targetId }) => {
         </div>
         <div>
           <div style={styles.infoContainer}>
-            <Link to="/">
+            <Link
+              to="https://www.linkedin.com/in/ann-suparada/"
+              target="_blank"
+            >
               <LinkedInIcon style={styles.icon} />
             </Link>
             <h5 style={styles.h5}>Ann Keller</h5>
-            <Link to="/">
+            <Link to="https://github.com/annsuparada" target="_blank">
               <GitHubIcon style={styles.icon} />
             </Link>
             <h5 style={styles.h5}>annsuparada</h5>
-            <Link to="/">
+            <Link to="mailto:ann.suparada@gmail.com.com">
               <EmailIcon style={styles.icon} />
             </Link>
             <h5 style={styles.h5}>ann.suparada@gmail.com</h5>
