@@ -1,10 +1,14 @@
 import React from 'react'
-import { desktopView, lightBackground, secondary } from '../../theme'
-import HtmlIcon from '@mui/icons-material/Html'
-import CssIcon from '@mui/icons-material/Css'
-import JavascriptIcon from '@mui/icons-material/Javascript'
-import GitHubIcon from '@mui/icons-material/GitHub'
+import {
+  darkFont,
+  desktopView,
+  lightBackground,
+  pink,
+  primary,
+  secondary,
+} from '../../theme'
 import Grid from '../Grid'
+import { skills } from '../../data/projectData'
 
 interface SkillsProps {
   targetId: string
@@ -13,12 +17,12 @@ interface SkillsProps {
 const Skills: React.FC<SkillsProps> = ({ targetId }) => {
   const styles = {
     container: {
-      backgroundColor: lightBackground,
+      backgroundColor: pink,
       width: '100%',
       padding: '20px 0 50px',
     },
     h1: {
-      color: secondary,
+      color: darkFont,
     },
     grid: {
       maxWidth: desktopView,
@@ -27,10 +31,18 @@ const Skills: React.FC<SkillsProps> = ({ targetId }) => {
       display: 'grid',
       gridTemplateColumns: 'repeat(6, 1fr)',
       gap: '10px',
+      justifyItems: 'center',
+      alignItems: 'end',
     },
     icon: {
-      fontSize: '100px',
-      color: secondary,
+      width: '100px',
+    },
+    p: {
+      margin: '10px 0',
+      fontSize: '25px',
+      fontWeight: 'bold',
+      color: darkFont,
+      textAlign: 'center' as 'center',
     },
   }
   return (
@@ -41,19 +53,14 @@ const Skills: React.FC<SkillsProps> = ({ targetId }) => {
         tabletColumns={5}
         mobileColumns={3}
         padding="10px"
+        customStyles={styles.grid}
       >
-        <HtmlIcon style={styles.icon} />
-        <CssIcon style={styles.icon} />
-        <JavascriptIcon style={styles.icon} />
-        <JavascriptIcon style={styles.icon} />
-        <GitHubIcon style={styles.icon} />
-        <GitHubIcon style={styles.icon} />
-        <GitHubIcon style={styles.icon} />
-        <GitHubIcon style={styles.icon} />
-        <GitHubIcon style={styles.icon} />
-        <GitHubIcon style={styles.icon} />
-        <GitHubIcon style={styles.icon} />
-        <GitHubIcon style={styles.icon} />
+        {skills.map((i, index) => (
+          <div key={index}>
+            <img src={i.src} alt={i.alt} style={styles.icon} />
+            <p style={styles.p}>{i.alt}</p>
+          </div>
+        ))}
       </Grid>
     </div>
   )

@@ -1,3 +1,16 @@
+import html from '../branding/html.png'
+import css from '../branding/css.png'
+import express from '../branding/express.png'
+import js from '../branding/js.png'
+import mongoDB from '../branding/mongoDB.png'
+import nodejs from '../branding/nodejs.png'
+import postgresql from '../branding/postgresql.png'
+import python from '../branding/python.png'
+import react from '../branding/react.png'
+import redux from '../branding/redux.png'
+import typescript from '../branding/typescript.png'
+import django from '../branding/django.png'
+
 export const projects = [
   {
     imageUrl:
@@ -59,4 +72,19 @@ export const projects = [
     projectLink: 'https://www.facebook.com/theobservatoryshop/',
     gitHubLink: '',
   },
+]
+
+export const skills = [
+  { src: html, alt: 'HTML' },
+  { src: css, alt: 'css' },
+  { src: js, alt: 'JavaScript' },
+  { src: typescript, alt: 'TypeScript' },
+  { src: python, alt: 'Python' },
+  { src: react, alt: 'React' },
+  { src: redux, alt: 'Redux' },
+  { src: django, alt: 'Django' },
+  { src: nodejs, alt: 'Node JS' },
+  { src: express, alt: 'Express JS' },
+  { src: mongoDB, alt: 'Mongo DB' },
+  { src: postgresql, alt: 'PostgreSQL' },
 ]
