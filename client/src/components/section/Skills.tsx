@@ -1,12 +1,5 @@
 import React from 'react'
-import {
-  darkFont,
-  desktopView,
-  lightBackground,
-  pink,
-  primary,
-  secondary,
-} from '../../theme'
+import { darkFont, desktopView, pink } from '../../theme'
 import Grid from '../Grid'
 import { skills } from '../../data/projectData'
 

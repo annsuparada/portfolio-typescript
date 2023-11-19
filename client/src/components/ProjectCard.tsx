@@ -50,7 +50,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   }
   return (
     <div>
-      <Card>
+      <Card style={{ boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.5)' }}>
         <CardMedia component="img" image={imageUrl} alt={alt} />
         <CardContent>
           <h5 style={{ textAlign: 'left', margin: '5px' }}>{projectName}</h5>
